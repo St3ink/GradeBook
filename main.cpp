@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <sstream>
 #include <limits>
 using namespace std;
 
@@ -32,14 +33,15 @@ return 0;
 
 int arrayAssign(string names[6], int grades[6][5]){
   ifstream inputFile("studentGrades.txt");
+  string line;
   
     for (int i = 0; i < 6; i++) {
-      (getline(inputFile, names[i]));
-      inputFile >> names[i];
-        for(int j = 0; j < 5; j++){
-          inputFile >> grades[i][j];
-        }
-     
+      getline(inputFile, line);
+      istringstream iss(line);
+      iss >> names[i];
+      for(int j = 0; j < 5; j++){
+        iss >> grades[i][j];
+      }
     }
   return 0;
 }
