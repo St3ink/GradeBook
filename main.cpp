@@ -34,12 +34,11 @@ int arrayAssign(string names[6], int grades[6][5]){
   ifstream inputFile("studentGrades.txt");
   
     for (int i = 0; i < 6; i++) {
-      (getline(inputFile, names[i]));
-      inputFile >> names[i];
-        for(int j = 0; j < 5; j++){
-          inputFile >> grades[i][j];
-        }
-     
+      getline(inputFile, names[i]);
+      for(int j = 0; j < 5; j++) {
+        inputFile >> grades[i][j];
+      }
+      inputFile.ignore(); // Skip newline after grades
     }
   return 0;
 }
