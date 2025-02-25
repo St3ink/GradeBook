@@ -68,13 +68,13 @@ double calculateAvg(double averages[6], int grades[6][5]) { //takes grades for e
 }
 void getLetterGrades(double averages[6], char letterGrades[6]) { //Function to convert avg and put them in parallel letter grade array 
     for (int i = 0; i < 6; i++) {
-        if (averages[i] >= 90) {
+        if (averages[i] >= 91) {
             letterGrades[i] = 'A';
-        } else if (averages[i] >= 80) {
+        } else if (averages[i] >= 81) {
             letterGrades[i] = 'B';
-        } else if (averages[i] >= 70) {
+        } else if (averages[i] >= 71) {
             letterGrades[i] = 'C';
-        } else if (averages[i] >= 60) {
+        } else if (averages[i] >= 61) {
             letterGrades[i] = 'D';
         } else {
             letterGrades[i] = 'F';
